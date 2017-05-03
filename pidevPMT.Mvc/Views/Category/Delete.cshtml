@@ -1,0 +1,40 @@
+﻿@model pidevPMT.Mvc.Models.CategoryMeetingModels
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" id="delete"/> 
+           
+        </div>
+        @Html.ActionLink("Back to List", "Index")
+    }
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            toastr.options.timeOut = 5000; // 1.5s
+            toastr.warning('Verifiez avant de supprimer!');
+            $('#delete').click(function () {
+                toastr.success('Category Deleted');
+            });
+        });
+    </script>
+</div>
+@Scripts.Render("~/bundles/toastr")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")

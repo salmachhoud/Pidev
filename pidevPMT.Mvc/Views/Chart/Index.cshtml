@@ -1,0 +1,26 @@
+﻿
+@{
+
+    Layout = "~/Views/Shared/_MyTemplate.cshtml";
+}
+
+
+
+
+@section featured
+{
+    <section class="featured">
+
+        @{
+            ViewBag.Title = "BillChart";
+        }
+
+        <h2>BillChart</h2>
+
+        <img src="@Url.Action("BillChart")" alt="SimpleChart" />
+
+    </section>
+
+}
+
+@Scripts.Render("~/bundles/jqueryval")

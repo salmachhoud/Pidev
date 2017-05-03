@@ -1,0 +1,16 @@
+﻿@model IEnumerable<pidevPMT.Mvc.Models.MeetingModels>
+@{
+
+    Layout = "~/Views/Shared/_MyTemplate.cshtml";
+}
+@section featured
+{
+    <section class="featured">
+    @{
+        ViewBag.Title = "Create";
+    }
+        @Html.Partial("_image")
+</section>
+
+}
+@Scripts.Render("~/bundles/jqueryval")

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<pidevPMT.domain.Entities.meeting>
+@{
+            ViewBag.Title = "Search subCategory";
+}
+<h2>Search Meeting</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+
+    @using (Html.BeginForm())
+            {
+    <p>
+
+        Name of the Category: @Html.TextBox("SearchStringCategory")
+
+        Name of the Meeting: @Html.TextBox("SearchStringMeeting")
+        <input type="submit" value="Filter" />
+    </p>
+    }
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+
+
+            </tr>
+        }
+
+    </table>
+
+
+

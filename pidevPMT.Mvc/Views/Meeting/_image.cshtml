@@ -1,0 +1,17 @@
+﻿@model IEnumerable<pidevPMT.Mvc.Models.MeetingModels>
+
+
+
+    <table class="table">
+        <tr></tr>
+
+        @foreach (var item in Model)
+        {
+            <th>@item.Title</th>
+                <th>
+                    @{string path = "~/Content/upload/" + item.Image;}
+                    <img src="@Url.Content(path)" height="100" width="100" />
+                </th>
+
+                        }
+    </table>

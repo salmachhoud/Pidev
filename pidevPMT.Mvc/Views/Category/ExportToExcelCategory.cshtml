@@ -1,0 +1,29 @@
+﻿@model IEnumerable<pidevPMT.domain.Entities.categorymeeting>
+@{
+
+    Layout = "~/Views/Shared/_MyTemplate.cshtml";
+}
+
+        <p>
+            @Html.ActionLink("Export to Excel", "ExportToExcel", "Meeting")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                   
+                </tr>
+            }
+
+        </table>
+    
